@@ -142,7 +142,6 @@ const Navigation = () => {
        </BacktoTop>
     
     <AboutMeModal showModal={showModal} handleClick={handleClick}/>
-
     </Container>
     
     </>
@@ -157,7 +156,6 @@ const Container = styled.div`
     justify-content: space-between;
     position:sticky;
     width:100%;
-    overflow: hidden;
     z-index:101;
     top:0;
     left:0;
@@ -267,7 +265,7 @@ const NavListMobile = styled.div`
     z-index:100;
     top:20vh;
     transition: 0.5s all ease;
-    background-color: rgba(255, 255, 255, 0.55);  
+    background-color: rgba(255, 255, 255, 0.90);  
     backdrop-filter: blur(15px);
     border-bottom-right-radius: 10px;
     box-shadow: 2px 6px 13px -2px rgba(0,0,0,0.11);
@@ -366,5 +364,7 @@ const BacktoTop = styled.div`
         cursor: pointer;
     }
 `
+
+
 
 export default Navigation

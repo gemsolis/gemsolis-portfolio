@@ -16,7 +16,8 @@ import patternBg from '../../assets/pattern-bg.png'
 
 const Main = () => {
   return (
-  
+    <div>
+
     <Container id="home" style={{
         background: `url(${patternBg})`,
         backgroundSize: "cover",
@@ -63,11 +64,8 @@ const Main = () => {
             </a>
         </WorkButton>
         </Fade>
-
-
-        
     </Container> 
-
+    </div>
   )
 }
 

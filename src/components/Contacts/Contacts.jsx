@@ -59,9 +59,9 @@ const Contacts = () => {
             <img src={logo} alt="Gem Solis" />
           </FooterLogo>
           <ContactInfo>
-            <li><MdOutlineLocalPhone/><p>+639 919 931 4510</p></li>
-            <li><MdLocationOn/><p>Cavite, Philippines 4106</p></li>
-            <li><MdOutlineAlternateEmail/><p>contact@gemsolis.com</p></li>
+            <li><MdOutlineLocalPhone/><span>+639 919 931 4510</span></li>
+            <li><MdLocationOn/><span>Cavite, Philippines 4106</span></li>
+            <li><MdOutlineAlternateEmail/><span>contact@gemsolis.com</span></li>
           </ContactInfo>
           <SiteInfo>
             <p>All Rights Reserved.</p>
@@ -232,11 +232,13 @@ const ContactInfo = styled.ul`
   li{
     display: flex;
     align-items: center;
-    margin:0 20px;
+    margin:10px 20px;
 
-    p{
-      font-size:1.1rem;
+    span{
+      color:#F0C413;
+      font-size:1rem;
       margin-left:10px;
+      font-weight:700;
     }
   }
 

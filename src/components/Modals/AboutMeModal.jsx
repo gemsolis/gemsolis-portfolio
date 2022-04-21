@@ -79,22 +79,22 @@ const AboutMeModal = (props) => {
 const Container = styled.div`
     position:fixed;
     width:60vw;
-    height:80vh;
+    height:85vh;
     margin:auto;
     top:5vh;
     left:0;
     right:0;
-    z-index:999;
+    z-index:1000;
     color: #fff;
     border-radius:10px;
-    background-color: rgba(0, 0, 0, 0.70);  
+    background-color: rgba(0, 0, 0, 0.90);  
     backdrop-filter: blur(15px);
     animation: fadeInDown 0.5s;
     overflow-y:scroll;
-    overflow-x: hidden;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+    overflow-x:hidden;
+    text-align:center;
+
+
 
     @media (max-width:1024px){
       width:80vw;
@@ -110,10 +110,11 @@ const Container = styled.div`
 `
 
 const Close = styled.div`
-  position:fixed;
+  position:absolute;
   top:30px;
   right:10px;
 
+  
   svg{
     cursor:pointer;
     font-size:30px;
@@ -124,9 +125,9 @@ const Content = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-    position:relative;
+    justify-content: center;
     margin:50px 20px;
-    width:70%;
+    width:100%;
 `
 
 const Photo = styled.div`
@@ -149,6 +150,7 @@ const Bio = styled.div`
     margin-top:10px;
     line-height:1.5;
     text-align: justify;
+    padding:0 10vw;
 
     @media (max-width:568px){
         font-size:12px;
