@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useRef} from 'react'
 import styled from 'styled-components'
@@ -6,7 +7,7 @@ import emailjs from '@emailjs/browser';
 
 import {AiOutlineGithub, AiFillLinkedin, AiOutlineBehanceSquare, AiFillFacebook} from 'react-icons/ai'
 import {MdLocationOn, MdOutlineLocalPhone, MdOutlineAlternateEmail} from 'react-icons/md'
-import logo from '../../assets/gs-logo-white.png'
+import logo from '../../assets/gem-logo.png'
 import patternbgfull from '../../assets/pattern-bgfull.jpg'
 
 const Contacts = () => {
@@ -31,6 +32,7 @@ const Contacts = () => {
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
       backgroundPosition: "top center",
+      backgroundAttachment:"fixed",
       }}>
         <Contact>
             <Form>
@@ -46,10 +48,10 @@ const Contacts = () => {
               </form>
             </Form>
             <SocialLinks>
-            <li><a href="https://github.com/gemsolis"><AiOutlineGithub/></a></li>
-            <li><a href="https://www.linkedin.com/in/abigael-gem-manalo-673362155/"><AiFillLinkedin/></a></li>
-            <li><a href="https://www.behance.net/gemsolis"><AiOutlineBehanceSquare/></a></li>
-            <li><a href="https://www.facebook.com/abigaelgem19/"><AiFillFacebook/></a></li>
+            <li><a href="https://github.com/gemsolis" target="_blank"><AiOutlineGithub/></a></li>
+            <li><a href="https://www.linkedin.com/in/abigael-gem-manalo-673362155/" target="_blank"><AiFillLinkedin/></a></li>
+            <li><a href="https://www.behance.net/gemsolis" target="_blank"><AiOutlineBehanceSquare/></a></li>
+            <li><a href="https://www.facebook.com/abigaelgem19/" target="_blank"><AiFillFacebook/></a></li>
             </SocialLinks>
         </Contact>
         <Footer>
@@ -119,12 +121,12 @@ const Form = styled.div`
     }
 
     input{
-      background: #fff;
+      background: rgba(255, 255, 255, 0.44);
       outline:none;
       border:none;
       border-bottom:2px solid #252525;
       border-radius: 10px;
-      padding:10px 5px;
+      padding:10px 10px;
       margin-bottom:30px;
       font-size:16px;
       color: #252525;
@@ -137,7 +139,7 @@ const Form = styled.div`
     }
 
     textarea{
-      background: #fff;
+      background: rgba(255, 255, 255, 0.44);
       height:150px;
       outline:none;
       border:none;
@@ -219,7 +221,7 @@ const Footer = styled.div`
 const FooterLogo = styled.div`
 
   img{
-    width:80px;
+    width:64px;
   }
 `
 const ContactInfo = styled.ul`

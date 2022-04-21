@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
 import ScrollspyNav from 'react-scrollspy-nav'
 import AboutMeModal from '../Modals/AboutMeModal'
-import logo from '../../assets/gs-logo.png'
+import logo from '../../assets/gem-logo.png'
 import {AiOutlineHome, AiOutlineProject, AiOutlineContacts, AiOutlineGithub, AiFillLinkedin, AiOutlineBehanceSquare, AiFillFacebook} from 'react-icons/ai'
 import {GrGraphQl}  from 'react-icons/gr'
 import {RiQuestionLine, RiMenuUnfoldFill, RiStackLine, RiArrowUpSLine}  from 'react-icons/ri'
@@ -12,6 +13,7 @@ import {RiQuestionLine, RiMenuUnfoldFill, RiStackLine, RiArrowUpSLine}  from 're
 const Navigation = () => {
     const [showMenu, setShowMenu] = useState("")
     const [showModal, setShowModal] = useState("close");
+    const [showTopBtn, setShowTopBtn] = useState(false);
 
 
     const handleToggle = () => {
@@ -38,13 +40,30 @@ const Navigation = () => {
           }
       }
 
+      useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                setShowTopBtn(true);
+            } else {
+                setShowTopBtn(false);
+            }
+        });
+    }, []);
+
+    const goToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
 
   return (
     <>
-    <Container id="homepage">
+    <Container >
 
     <Logo>
-    <a href="#homepage"><img src={logo} alt="Gem Solis"/></a>
+    <a href="/"><img src={logo} alt="Gem Solis"/> <h1>gem solis</h1></a>
     </Logo>
     <NavList>
          <ScrollspyNav
@@ -82,7 +101,11 @@ const Navigation = () => {
 {/* Nav For Mobile */}
 
         <NavListMobile className= {showMenu ? "showMenu" : "hideMenu"} >
+
         <NavLinksMobile onClick={handleToggle}>
+            <LogoMobile>
+            <a href="/"><img src={logo} alt="Gem Solis"/></a>
+            </LogoMobile>
             <li>
                 <a href="#home"><AiOutlineHome/><span>Home</span></a>
             </li>
@@ -99,10 +122,10 @@ const Navigation = () => {
                 <a href="#contacts"><AiOutlineContacts/><span>Contacts</span></a>
             </li>
             <SocialLinks>
-            <li><a href="https://github.com/gemsolis"><AiOutlineGithub/></a></li>
-            <li><a href="https://www.linkedin.com/in/abigael-gem-manalo-673362155/"><AiFillLinkedin/></a></li>
-            <li><a href="https://www.behance.net/gemsolis"><AiOutlineBehanceSquare/></a></li>
-            <li><a href="https://www.facebook.com/abigaelgem19/"><AiFillFacebook/></a></li>
+            <li><a href="https://github.com/gemsolis" target="_blank"><AiOutlineGithub/></a></li>
+            <li><a href="https://www.linkedin.com/in/abigael-gem-manalo-673362155/" target="_blank"><AiFillLinkedin/></a></li>
+            <li><a href="https://www.behance.net/gemsolis" target="_blank"><AiOutlineBehanceSquare/></a></li>
+            <li><a href="https://www.facebook.com/abigaelgem19/" target="_blank"><AiFillFacebook/></a></li>
             </SocialLinks>
         </NavLinksMobile>
 
@@ -112,8 +135,11 @@ const Navigation = () => {
     </NavListMobile>
 
     <BacktoTop>
-       <a href="#home"><button><RiArrowUpSLine/></button></a>
-    </BacktoTop>
+
+    {showTopBtn && (
+       <a href="#home" onClick={goToTop}><button><RiArrowUpSLine/></button></a>
+    )}
+       </BacktoTop>
     
     <AboutMeModal showModal={showModal} handleClick={handleClick}/>
 
@@ -153,7 +179,7 @@ const Logo = styled.div`
     }
 
     h1{
-        font-size:16px;
+        font-size:25px;
     }
 
     img{
@@ -252,6 +278,15 @@ const NavListMobile = styled.div`
 }
 
 `
+
+const LogoMobile = styled.div`
+    display:flex;
+    justify-content: center;
+
+    img{
+        width:50px;
+    }
+`
 const NavLinksMobile = styled.ul`
     display:none;
 
@@ -289,7 +324,7 @@ const Menu = styled.div`
         position:fixed;
         color: #fff;
         font-size:18px;
-        background-color: rgba(0, 0, 0, 0.80);  
+        background-color: rgba(0, 0, 0, 0.70);  
         backdrop-filter: blur(15px);
         padding:10px;
         border-top-right-radius: 10px;
@@ -307,12 +342,12 @@ const SocialLinks = styled.ul`
     display:flex;
     justify-content: space-around;
     margin-top: 10px;
-    background:#fff;
+    background-color: #000;
     border-bottom-right-radius: 10px;
 
-    li{
+    svg{
         font-size:22px;
-        color:#9B0095;
+        color:#F0C413;
     }
 `
 
@@ -321,12 +356,13 @@ const BacktoTop = styled.div`
     bottom:20px;
     right:20px;
 
+
     button{
         padding:5px 10px;
-        background-color: rgb(155, 0, 149, 0.44);;
+        background-color:#2d2d2d;;
         font-size:2rem;
         color:#fff;
-        border-radius: 50%;
+        border-radius: 20%;
         cursor: pointer;
     }
 `

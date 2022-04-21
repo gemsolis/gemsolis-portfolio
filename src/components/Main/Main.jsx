@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
 import styled from 'styled-components'
@@ -43,10 +44,10 @@ const Main = () => {
             </Fade>
             <SocialLinks>
             <Fade direction={"down"} delay={1200} cascade={true}>
-            <li><a href="https://github.com/gemsolis"><AiOutlineGithub/></a></li>
-            <li><a href="https://www.linkedin.com/in/abigael-gem-manalo-673362155/"><AiFillLinkedin/></a></li>
-            <li><a href="https://www.behance.net/gemsolis"><AiOutlineBehanceSquare/></a></li>
-            <li><a href="https://www.facebook.com/abigaelgem19/"><AiFillFacebook/></a></li>
+            <li><a href="https://github.com/gemsolis" target="_blank"><AiOutlineGithub/></a></li>
+            <li><a href="https://www.linkedin.com/in/abigael-gem-manalo-673362155/" target="_blank"><AiFillLinkedin/></a></li>
+            <li><a href="https://www.behance.net/gemsolis" target="_blank"><AiOutlineBehanceSquare/></a></li>
+            <li><a href="https://www.facebook.com/abigaelgem19" target="_blank"><AiFillFacebook/></a></li>
             </Fade>
             </SocialLinks>
         </Intro>
@@ -120,7 +121,7 @@ const Intro = styled.div`
 
     h3{
         font-size:2.5rem;
-        color:#caba00;
+        color:#F0C413;
 
     }
     h1{
@@ -181,9 +182,10 @@ const SocialLinks = styled.ul`
     display:flex;
     align-self: flex-end;
     margin:30px 0;
+    
 
     svg{
-        color:#2b2b2b;
+        color:#3c3c3c;
         font-size: 1.5rem;
         cursor: pointer;
         transition: 0.2s all ease;
