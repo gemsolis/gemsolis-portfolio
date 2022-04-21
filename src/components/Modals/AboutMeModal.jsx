@@ -13,6 +13,9 @@ const AboutMeModal = (props) => {
     {props.showModal === "open" && (
     <Container>
         <Content>
+        <Close>
+        <IoCloseCircleOutline onClick={(event) => reset(event)}/>
+        </Close>
         <h2>About Me</h2>
         <Photo>
           <img src={images.aboutmephoto} alt="" />
@@ -27,18 +30,43 @@ const AboutMeModal = (props) => {
         <p>Let's keep grinding!</p>
 
         </Bio>
+        <MoreAbout>
+          <Personality>
+            <h3>Personality</h3>
+            <img src={images.personality} alt="Mediator" />
+            <p>Mediator/INFP-A</p>
+          </Personality>
+          <Hobbies>
+            <h3>Other Interest</h3>
+            <ul>
+            <li><img src={images.art} alt="Art" /> <p>Art</p></li>
+            <li><img src={images.reading} alt="Reading" />  <p>Reading</p></li>
+            <li><img src={images.photography} alt="Photography" />  <p>Photography</p></li>
+            <li><img src={images.gaming} alt="Gaming" />  <p>Gaming</p></li>
+            </ul>
+
+
+          </Hobbies>
+        </MoreAbout>
         <Resources>
-        <h3>My Learning Resources</h3>
-            <li><p>Udemy: The Complete 2022 Web Development Course by Dr. Angela Yu</p></li>
+            <div>
+            <h3>My Learning Resources</h3>
+            <ul>
             <li><p>FreeCodeCamp.org</p></li>
             <li><p>Clever Programming</p></li>
             <li><p>Youtube Course/Tutorials</p></li>
+            </ul>
+            </div>
+            <div>
+            <h3>My Next Project</h3>
+            <ul>
+            <li><p>Ecommerce Site using Bootstrap</p></li>
+            </ul>
+            </div>
+
+
         </Resources>
 
-        <Close>
-        <IoCloseCircleOutline onClick={(event) => reset(event)}/>
-        </Close>
-        
         </Content>
        
 
@@ -72,14 +100,32 @@ const Container = styled.div`
       width:80vw;
       height:80vh;
     }
+
+    h3{
+      text-transform: uppercase;
+      margin: 10px 0;
+      color:#F0C413;
+    }
     
+`
+
+const Close = styled.div`
+  position:fixed;
+  top:30px;
+  right:10px;
+
+  svg{
+    cursor:pointer;
+    font-size:30px;
+  }
 `
 
 const Content = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-    margin:50px;
+    position:relative;
+    margin:50px 20px;
     width:70%;
 `
 
@@ -103,28 +149,87 @@ const Bio = styled.div`
     margin-top:10px;
     line-height:1.5;
     text-align: justify;
+
+    @media (max-width:568px){
+        font-size:12px;
+        line-height:1;
+      }
   }
 `
+
+const MoreAbout = styled.div`
+  width:100%;
+  display:flex;
+  justify-content: space-evenly;
+
+  @media (max-width:768px){
+    flex-direction:column;
+  }
+
+`
+
+const Personality = styled.div`
+  margin:20px;
+  text-align: center;
+  
+
+  img{
+    border-radius:50%;
+    margin:20px;
+    width:100px;
+
+  }
+`
+
+
+const Hobbies = styled(Personality)`
+
+  img{
+    width:42px;
+
+    @media (max-width:568px){
+      width:24px;
+    }
+  }
+
+  ul{
+    display:flex;
+
+    li{
+      margin:10px;
+
+      @media (max-width:768px){
+      text-align:center;
+      margin:5px;
+      }
+    }
+    @media (max-width:568px){
+      display:grid;
+      grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 1fr 1fr;
+    }
+  }
+
+`
+
 
 const Resources = styled.ul`
-  align-self: flex-start;
+  width:100%;
+  display:flex;
+  justify-content:space-around;
   margin:20px 0;
 
-  h3{
-    text-transform: uppercase;
-    margin: 10px 0;
-    color:#CABA00;
+  div{
+    margin:20px;
   }
+
+  @media (max-width:768px){
+    text-align:center;
+    flex-direction:column;
+  }
+
 `
 
-const Close = styled.div`
-  position:fixed;
-  top:10px;
-  right:10px;
-  svg{
-    cursor:pointer;
-    font-size:40px;
-  }
-`
+
 
 export default AboutMeModal

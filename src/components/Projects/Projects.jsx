@@ -1,8 +1,11 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react'
 import styled from 'styled-components'
+
+
+
 import {data} from '../../constant'
-import {BsFileCodeFill, BsGlobe} from 'react-icons/bs'
+import {BsFileCodeFill, BsGlobe, BsFillNutFill} from 'react-icons/bs'
 import { Fade } from "react-awesome-reveal";
 
 const Projects = () => {
@@ -13,21 +16,24 @@ const Projects = () => {
     </Title>
     <Items>
     {data.projects.map((project, index) => (
-            <Fade direction={"right"}>
+        <Fade direction={"right"}>
       <ItemWrap>
           <ProjectImage>
           <img src={project.imgUrl} alt="" />
           </ProjectImage>
+          <Details>
           <Name>
-          <h3>{project.name}</h3>
+          <BsFillNutFill/><h3>{project.name}</h3>
           </Name>
           <Description>
           <p>{project.description}</p>
           </Description>
           <SiteNav>
+          <button><a href={project.site} target="_blank"><BsGlobe/> <span>Live Site</span></a></button>
           <button><a href={project.github} target="_blank"><BsFileCodeFill/><span>View Code</span></a></button>
-          <button><a href={project.site} target="_blank"><BsGlobe/> <span>See Site</span></a></button>
           </SiteNav>
+          </Details>
+
           </ItemWrap>
         </Fade>
          
@@ -43,7 +49,16 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin:50px;
+    margin:50px 10vw;
+
+    @media (min-width:2000px){
+      margin:50px 20vw;
+    }
+    
+    @media (max-width:768px){
+      margin:50px 20px;
+
+    }
     
 `
 
@@ -55,72 +70,83 @@ const Title = styled.div`
 `
 
 const Items = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-column-gap: 30px;
-  grid-row-gap: 40px;
+  width:100%;
+
 
 `
 
 const ItemWrap = styled.div`
-    position:relative;
-    overflow:hidden;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #fff;
-    cursor:pointer;
-    box-shadow: 2px 6px 13px -2px rgba(0,0,0,0.20);
-    -webkit-box-shadow: 2px 6px 13px -2px rgba(0,0,0,0.20);
-    -moz-box-shadow: 2px 6px 13px -2px rgba(0,0,0,0.20);
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin:20px 0;
 
+  @media (max-width:667px){
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+`
+
+const Details = styled.div`
+  margin:20px;
+
+  @media (max-width:667px){
+    margin:20px 0;
+  }
 `
 
 
 const Name = styled.div`
-  font-size:16px;
-  margin:20px;
-  color:#CABA00;
+    display:flex;
+    align-items: center;
+    margin-bottom:20px;
+    color:#000;
+    text-transform: uppercase;
+    font-weight:400;
+
+    h3{
+      padding-left:10px;
+      color:#9B0095;
+    }
 `
 
 const SiteNav = styled.div`
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-  padding:10px 0;
-  margin-bottom: 10px;
-  background-color: #fff;
-
-  button{
     display:flex;
-    align-items: center;
-    color: #000;
-    font-size:14px;
-    margin-left:5px;
+    margin:20px;
 
-    svg{
-      color:#9B0095
+    button{
+      background-color: #F0C413;
+      margin-right: 20px;
+      padding:10px;
     }
 
     span{
-      font-size:14px;
-      padding-left:5px;
+      font-weight: 700;
+      margin-left:10px;
     }
-  }
+
+    @media (max-width:568px){
+      margin:10px;
+    }
+    
 `
 
 const Description = styled.div`
-   margin:20px 15px;
-   height:50px;
-   color:#000;
+    padding-left:20px;
+    margin-bottom:20px;
 `
 
 const ProjectImage = styled.div`
-  
-    
-   img{
-     width:100%;
-     object-fit: cover;
-   }
+    img{
+    max-width:300px;
+    transition: 0.3s all ease;
+
+    :hover{
+      transform: scale(1.1);
+    }
+    }
 
 `
 export default Projects

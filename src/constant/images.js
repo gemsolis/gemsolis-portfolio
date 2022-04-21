@@ -29,6 +29,11 @@ import vbideate from '../assets/vb-ideate.jpg'
 import vbdesign from '../assets/vb-design.jpg'
 import vbdesign2 from '../assets/vb-design-2.jpg'
 import aboutmephoto from '../assets/aboutme-photo.jpg'
+import personality from '../assets/gem-personality.png'
+import art from '../assets/h-art.png'
+import reading from '../assets/h-reading.png'
+import photography from '../assets/h-photography.png'
+import gaming from '../assets/h-gaming.png'
 
 
 
@@ -63,5 +68,10 @@ export default {
     vbdesign,
     vbdesign2,
     aboutmephoto,
+    personality,
+    art,
+    reading,
+    photography,
+    gaming,
 
 }

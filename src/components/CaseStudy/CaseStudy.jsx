@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
+
+import patternbgfull from '../../assets/pattern-bgfull.jpg'
+
 import { Fade } from "react-awesome-reveal";
 import VisionBoardModal from '../Modals/VisionBoardModal'
 import {images} from '../../constant'
-
 import {SiAntdesign} from 'react-icons/si'
 
 const CaseStudy = () => {
@@ -33,42 +35,52 @@ const CaseStudy = () => {
             <h2>Case Study</h2>
         </HeadText>
         <Fade direction={"left"}>
+        <BgWrap style={{
+        background: `url(${patternbgfull})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top center",
+        backgroundAttachment:"fixed",
+      }}>
         <Overview>
-            <Shadow/>
-            <CsPhoto>
-                <img src={images.casestudy2} alt="Aurras App" />
-            </CsPhoto>
-            <CsInfo>
-            <Title>
-                <TitleText>
-                    <h3>Aurras App</h3>
-                    <button onClick={handleClick}>
-                        <SiAntdesign/><span onClick={handleClick}>View Vision Board</span>
-                    </button>
-                </TitleText>
-            </Title>
-            
-            <About>
-            <h5>About</h5>  
-            <p>Aurras is a music player application that offers instrumental streaming services and is built for artist to showcase their crafted music. It also has a feature that let the users add environmental sounds, pure waves, and happiness frequency in the background to serve therapeutic and meditative purpose to the listeners.</p>
-            
-            </About>
-            <TechInfo>
-                <Tools>
-                <span>Tools</span>
-                <img src={images.figma} alt="Figma" /> 
-                <img src={images.adobexd} alt="AdobeXd" /> 
-                </Tools>
-                <Platform>
-                <span>Platform</span>
-                <img src={images.ios} alt="Figma" /> 
-                <img src={images.android} alt="AdobeXd" /> 
-                </Platform>
 
-            </TechInfo>
-            </CsInfo>
-            
-        </Overview>
+<Shadow/>
+<CsPhoto>
+    <img src={images.casestudy2} alt="Aurras App" />
+</CsPhoto>
+<CsInfo>
+<Title>
+    <TitleText>
+        <h3>Aurras App</h3>
+        <button onClick={handleClick}>
+            <SiAntdesign/><span onClick={handleClick}>View Vision Board</span>
+        </button>
+    </TitleText>
+</Title>
+
+<About>
+<h5>About</h5>  
+<p>Aurras is a music player application that offers instrumental streaming services and is built for artist to showcase their crafted music. It also has a feature that let the users add environmental sounds, pure waves, and happiness frequency in the background to serve therapeutic and meditative purpose to the listeners.</p>
+
+</About>
+<TechInfo>
+    <Tools>
+    <span>Tools</span>
+    <img src={images.figma} alt="Figma" /> 
+    <img src={images.adobexd} alt="AdobeXd" /> 
+    </Tools>
+    <Platform>
+    <span>Platform</span>
+    <img src={images.ios} alt="Figma" /> 
+    <img src={images.android} alt="AdobeXd" /> 
+    </Platform>
+
+</TechInfo>
+</CsInfo>
+
+</Overview>
+        </BgWrap>
+        
         </Fade>
         <VisionBoardModal showModal={showModal} handleClick={handleClick}/>
     </Container>
@@ -104,19 +116,23 @@ const Overview = styled.div`
     color:#fff;
     padding:50px;
     border-radius:10px;
-    background: rgb(15,22,43);
-    background: linear-gradient(315deg, rgba(15,22,43,1) 0%, rgba(86,0,107,1) 100%); 
+    background: linear-gradient(315deg, rgba(15,22,43,0.55) 0%, rgba(86,0,107,0.55) 100%);
+    background-attachment: fixed;
 
     @media (max-width:768px){
         flex-direction:column;
         padding:30px;
     }
 
-
-
-
-    
 `
+
+const BgWrap = styled.div`
+    width:100%;
+    height:100%;
+`
+
+
+
 
 const Shadow = styled.div`
         position:absolute;
@@ -130,8 +146,8 @@ const Shadow = styled.div`
         background-color:red;
         z-index:-1;
         background-color: #000;  
-        filter: blur(15px);
-        opacity:50%;
+        filter: blur(20px);
+        opacity:30%;
 
 `
 
@@ -175,7 +191,7 @@ const TitleText = styled.div`
 
     button{
         padding:10px;
-        background-color:#d2cb00;
+        background-color:#F0C413;
         border-radius:10px;
         cursor:pointer;
 

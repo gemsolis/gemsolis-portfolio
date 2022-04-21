@@ -60,7 +60,6 @@ const Container = styled.div`
     z-index:999;
     color: #000000;
     border-radius:10px;
-    justify-content: center;
     background-color: #f5f5f5;
     animation: fadeInDown 0.5s;
     overflow-x: hidden;

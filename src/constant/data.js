@@ -4,7 +4,7 @@ import images from "./images";
 
 const projects = [
     {
-        name: "LinkedIn Clone",
+        name: "LinkedIn Clone with Authentication Function",
         description: "Responsive website clone of the popular online service provider using React.js, Styled Components, Redux and Firebase.",
         imgUrl: images.linkedin,
         github: "https://github.com/gemsolis/LinkedIn-Clone.git",
@@ -13,7 +13,7 @@ const projects = [
     },
 
     {
-        name: "Netflix Clone",
+        name: "Netflix Clone using TMDB API",
         description: "Desktop version clone of the popular streaming service online using React.js, Sass, TMDB Api and Firebase.",
         imgUrl: images.netflix,
         github: "https://github.com/gemsolis/Netflix-Clone-React-Project.git",
@@ -21,7 +21,7 @@ const projects = [
     },
 
     {
-        name: "Restaurant Website",
+        name: "Fully Responsive Restaurant Website— Gericth",
         description: "Responsive restaurant website built with React.js, Sass and Firebase.",
         imgUrl: images.restaurant,
         github: "https://github.com/gemsolis/Restaurant-Website-ReactJS.git",
@@ -29,8 +29,8 @@ const projects = [
     },
 
     {
-        name: "Todo App",
-        description: "Simple Todo App using Vanilla JS.",
+        name: "Todo App —— Vanilla Js",
+        description: "Simple Todo App just using Vanilla JS.",
         imgUrl: images.todoapp,
         github: "https://github.com/gemsolis/TODOAPP-Version-1.2.git",
         site:"https://todo-app-project-4d8ed.web.app",
