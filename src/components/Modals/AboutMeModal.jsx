@@ -78,7 +78,7 @@ const AboutMeModal = (props) => {
 
 const Container = styled.div`
     position:fixed;
-    width:60vw;
+    width:70vw;
     height:85vh;
     margin:auto;
     top:5vh;
@@ -92,7 +92,9 @@ const Container = styled.div`
     animation: fadeInDown 0.5s;
     overflow-y:scroll;
     overflow-x:hidden;
-    text-align:center;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
 
 
 
@@ -111,7 +113,7 @@ const Container = styled.div`
 
 const Close = styled.div`
   position:absolute;
-  top:30px;
+  top:20px;
   right:10px;
 
   
